@@ -1,7 +1,6 @@
-// src/RestaurantReviews.jsx
 import { useState } from "react";
 
-// Mock reviews per restaurant id
+
 const REVIEWS = {
   1: {
     food: [

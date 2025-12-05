@@ -1,5 +1,4 @@
-// src/NotificationsSettings.jsx
-import "./notifications.css"; // make sure this file exists
+import "./notifications.css";
 
 export default function NotificationsSettings({ onBack }) {
   return (

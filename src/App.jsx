@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState } from "react";
 
 import Browse from "./Browse.jsx";
@@ -7,7 +6,6 @@ import RestaurantReviews from "./RestaurantReviews.jsx";
 import Settings from "./Settings.jsx";
 import NotificationsSettings from "./NotificationsSettings.jsx";
 
-// Images reused for AI recommendations
 import kfcImg from "./assets/zinger.jpg";
 import katokImg from "./assets/katok.jpg";
 import seoulImg from "./assets/beef.jpg";
@@ -15,7 +13,6 @@ import aichaImg from "./assets/brown.jpg";
 import theforkImg from "./assets/forkburg.jpg";
 import gomamamImg from "./assets/gomamam.jpg";
 
-// AI recommendation examples (front-end only, no backend)
 const RECOMMENDATIONS = [
   {
     id: 1,
@@ -59,7 +56,7 @@ const RECOMMENDATIONS = [
   },
 ];
 
-// Cuisines used for "Satisfy your cravings"
+
 const CRAVING_CUISINES = [
   { label: "Fast food", value: "Fast Food", emoji: "🍔" },
   { label: "Korean", value: "Korean", emoji: "🇰🇷" },
@@ -68,7 +65,7 @@ const CRAVING_CUISINES = [
   { label: "Western", value: "Western", emoji: "🥩" },
 ];
 
-// All possible “views” in the app
+
 const VIEWS = {
   HOME: "home",
   BROWSE: "browse",
@@ -101,7 +98,6 @@ function App() {
   };
 
   const handleBackFromReviews = () => {
-    // simple: always go back to Browse for now
     setActiveView(VIEWS.BROWSE);
   };
 

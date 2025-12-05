@@ -1,7 +1,6 @@
-// src/Browse.jsx
 import { useState } from "react";
 
-// local images
+
 import kfcImg from "./assets/kfc.jpg";
 import katokImg from "./assets/katok.jpg";
 import seoulImg from "./assets/seoul.jpg";
@@ -9,7 +8,7 @@ import serikandiImg from "./assets/serikandi.jpg";
 import aichaImg from "./assets/aicha.jpg";
 import theforkImg from "./assets/thefork.jpg";
 
-// Mock restaurant data (front-end only)
+//mock data 
 const RESTAURANTS = [
   {
     id: 1,
@@ -254,10 +253,10 @@ export default function Browse({
             onClick={() => onSelectRestaurant && onSelectRestaurant(r)}
           >
             <div className="restaurant-main">
-              {/* image left */}
+
               <img src={r.image} alt={r.name} className="restaurant-img" />
 
-              {/* text middle */}
+
               <div className="restaurant-info">
                 <h2 className="restaurant-name">{r.name}</h2>
 

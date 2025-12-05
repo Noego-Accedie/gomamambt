@@ -1,4 +1,3 @@
-// src/Settings.jsx
 export default function Settings({ onOpenNotifications }) {
   const items = [
     { id: "saved", label: "My saved places", icon: "📍" },

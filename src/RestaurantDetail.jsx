@@ -1,7 +1,5 @@
-// src/RestaurantDetail.jsx
 import React from "react";
 
-// Simple mock menu per restaurant id
 const MENUS = {
   1: [
     { name: "2-Piece Chicken Set", desc: "With fries & soft drink.", price: "$6.90" },
