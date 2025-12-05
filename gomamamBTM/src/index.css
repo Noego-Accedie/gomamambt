@@ -1,0 +1,1039 @@
+/* ===== Base ===== */
+:root {
+  --green: #16a34a;    /* main green */
+  --green-light: #22c55e;
+  --text: #1f2937;
+  --gray: #6b7280;
+  --bg: #ffffff;
+  --card-bg: #f8fafc;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+}
+
+/* ===== App Layout ===== */
+.app {
+  min-height: 100vh;
+  padding-bottom: 70px; /* leave space for bottom nav */
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 1rem 1.5rem;
+  background: var(--bg);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  color: var(--green);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+/* ===== Main ===== */
+.app-main {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 0;
+  color: var(--green);
+}
+
+.lead {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+/* ===== Generic Cards (Home & Settings) ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border-left: 5px solid var(--green);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--green);
+}
+
+/* ===== Filters (Browse) ===== */
+.filters {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.filters-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.filter-input,
+.filter-select {
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+/* Sort pills */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.pill.active {
+  border-color: var(--green);
+  background: #ecfdf3;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* ===== Restaurant list ===== */
+.browse-summary {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.restaurant-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.restaurant-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.restaurant-name {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.restaurant-meta {
+  font-size: 0.8rem;
+  color: var(--gray);
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.1rem;
+}
+
+.restaurant-tags {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag-chip {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  background: #ecfdf3;
+  color: var(--green);
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.rating-score {
+  font-weight: 700;
+}
+
+.rating-star {
+  color: #facc15;
+  font-size: 0.9rem;
+}
+
+.restaurant-footer {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.promo-pill {
+  margin-left: auto;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.restaurant-promo-text {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #92400e;
+}
+
+.empty-state {
+  padding: 1rem;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* ===== Bottom Navigation ===== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--bg);
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem 0;
+  border: none;
+  background: none;
+  color: var(--gray);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.nav-btn.active {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.restaurant-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  flex-shrink: 0; /* prevents squishing */
+}
+
+.restaurant-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* clickable cards */
+.restaurant-card.clickable {
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.restaurant-card.clickable:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.12);
+}
+
+/* image + info (if not already there) */
+.restaurant-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.restaurant-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* detail page */
+.back-button {
+  background: none;
+  border: none;
+  color: var(--green);
+  font-size: 0.9rem;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.detail-hero {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.detail-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.detail-hero-info {
+  flex: 1;
+}
+
+.detail-name {
+  margin: 0;
+  color: var(--green);
+}
+
+.detail-meta {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-top: 0.2rem;
+}
+
+.detail-chip-row {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.rating-badge {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #ecfdf3;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.detail-promo {
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 0.7rem;
+  background: #fef3c7;
+  border-radius: 0.6rem;
+  font-size: 0.85rem;
+  color: #92400e;
+}
+
+/* sections */
+.detail-section {
+  margin-top: 0.75rem;
+}
+
+.detail-text {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.detail-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* tabs */
+.detail-tabs {
+  display: flex;
+  border-radius: 999px;
+  padding: 0.15rem;
+  background: #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+.detail-tab {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.detail-tab.active {
+  background: #ffffff;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* reviews */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-card {
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.6rem;
+  background: #f9fafb;
+}
+
+.review-rating {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.review-text {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+}
+
+/* make rating look clickable */
+.rating-clickable {
+  cursor: pointer;
+}
+
+/* menu list in RestaurantDetail */
+.menu-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.4rem;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-main {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.menu-item-name {
+  font-weight: 600;
+}
+
+.menu-item-price {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.menu-item-desc {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* rating badge as button in detail */
+.rating-link {
+  border: none;
+  background: #ecfdf3;
+}
+
+/* subtle small clickable rating badge */
+.rating-review-link-small {
+  display: inline-flex;
+  align-items: center;
+
+  background: #ecfdf5;            /* light mint */
+  border: 1px solid #a7f3d0;      /* soft green */
+  padding: 2px 6px;               /* much smaller */
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: 0.15s ease;
+  height: fit-content;
+}
+
+.rating-review-link-small:hover {
+  background: #d1fae5;
+}
+
+.rrl-small-score {
+  font-size: 0.75rem;             /* smaller text */
+  font-weight: 600;
+  color: #065f46;                 /* dark green */
+  letter-spacing: -0.3px;
+}
+
+/* ===== Settings list ===== */
+.settings-card {
+  padding: 0.75rem 1rem;
+}
+
+.settings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: default;
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-item:hover {
+  background-color: #f9fafb;
+}
+
+.settings-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.settings-icon {
+  width: 1.5rem;
+  text-align: center;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+.settings-label {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Marketing notifications row */
+.settings-item-toggle {
+  cursor: default; /* only the switch is interactive */
+}
+
+/* Small iOS-style toggle switch */
+.toggle-switch {
+  width: 34px;
+  height: 18px;
+  border-radius: 999px;
+  border: none;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: #d1d5db;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.toggle-knob {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+
+/* ON state */
+.toggle-switch.on {
+  background: var(--green);
+  justify-content: flex-end;
+}
+
+/* ===== Settings list ===== */
+
+.settings-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid #e5e7eb;
+
+  background: #ffffff;
+  transition: background 0.12s ease;
+}
+
+/* darker highlight when hovered (for all rows) */
+.settings-item:hover {
+  background: #e5e7eb; /* darker than the usual pale grey */
+}
+
+.settings-item-clickable {
+  cursor: pointer;
+}
+
+.settings-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.settings-icon {
+  font-size: 1.1rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.settings-label {
+  font-size: 0.95rem;
+}
+
+/* right arrow for Notifications row */
+.settings-arrow {
+  font-size: 1.1rem;
+  color: #9ca3af;
+}
+
+/* ===== Fake toggles on Notifications page ===== */
+
+.settings-toggle-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+}
+
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  font-size: 0.9rem;
+}
+
+/* simple pill-shaped fake toggles */
+.fake-toggle {
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  position: relative;
+  background: #d1d5db;
+}
+
+.fake-toggle::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 0.15s ease;
+}
+
+.fake-toggle-on {
+  background: #16a34a;
+}
+
+.fake-toggle-on::before {
+  transform: translateX(14px);
+}
+
+/* ===== REAL iOS-style toggle switch ===== */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #d1d5db;       /* gray-300 */
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: 0.25s;
+}
+
+.toggle-slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+
+  transition: 0.25s;
+}
+
+/* When toggled ON */
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #34d399; /* emerald-400 */
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+.ai-recs {
+  margin-bottom: 1.5rem;
+}
+
+.ai-recs-header h2 {
+  margin: 0;
+  color: var(--green);
+}
+
+.ai-recs-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.ai-recs-card {
+  margin-top: 0.75rem;
+  background: #f0fdf4; /* light green tint */
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.12);
+}
+
+.ai-recs-main {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.ai-recs-text {
+  flex: 1;
+}
+
+.ai-recs-restaurant {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.ai-recs-dish {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+.ai-recs-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-top: 0.15rem;
+}
+
+.ai-recs-reason {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-top: 0.35rem;
+}
+
+.ai-recs-image-wrapper {
+  flex-shrink: 0;
+}
+
+.ai-recs-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Arrows / footer */
+.ai-recs-footer {
+  margin-top: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.ai-recs-arrow {
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ai-recs-arrow:hover {
+  background: #d1fae5;
+}
+
+.ai-recs-counter {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* ===== Header logo ===== */
+.logo-button {
+  border: none;
+  background: none;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 4rem;            /* adjust if needed */
+  width: auto;
+  display: block;
+}
+
+/* ===== AI Recommendations ===== */
+.ai-recs {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ai-recs-header {
+  margin-bottom: 0.75rem;
+}
+
+.ai-recs-header h2 {
+  margin: 0;
+  color: var(--green);
+}
+
+.ai-recs-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* Card with fixed-ish layout */
+.ai-recs-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem 0.9rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+  border: 1px solid #e5e7eb;
+
+  max-width: 420px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Fixed image area so height doesn't jump */
+.ai-recs-image-area {
+  width: 100%;
+  height: 220px;                /* fixed height for consistency */
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: #f3f4f6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.ai-recs-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* keeps aspect while filling area */
+}
+
+/* Text block with minimum height so card doesn't shrink */
+.ai-recs-text {
+  text-align: left;
+  min-height: 90px;             /* helps keep card height steady */
+}
+
+.ai-recs-restaurant {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.ai-recs-dish {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+.ai-recs-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-top: 0.1rem;
+}
+
+.ai-recs-reason {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* Arrows + counter */
+.ai-recs-footer {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.ai-recs-arrow {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-recs-arrow:hover {
+  border-color: var(--green);
+}
+
+.ai-recs-counter {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* ===== Cravings section on Home ===== */
+.cravings-section {
+  margin-top: 2rem;
+}
+
+.cravings-section h2 {
+  margin: 0;
+  color: var(--green);
+}
+
+.cravings-subtitle {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+/* row of small cards, wraps on narrow screens */
+.cravings-grid {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.craving-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  background: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.05s ease;
+}
+
+.craving-card:hover {
+  background: #ecfdf3;
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
+.craving-emoji {
+  font-size: 1rem;
+}
+
+.craving-label {
+  white-space: nowrap;
+}
