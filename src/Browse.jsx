@@ -147,7 +147,7 @@ export default function Browse({
     <section>
       <h1>Browse Restaurants</h1>
       <p className="lead">
-        Explore how enhanced sorting &amp; filtering can reduce “time-to-order”.
+        Find the perfect dish for takeout.
       </p>
 
       {/* Filters */}
