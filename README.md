@@ -64,22 +64,6 @@ Frontend	React (Vite), JavaScript
 Styling	CSS
 Deployment	GitHub Pages
 
-📂 Project Structure
-gomamambt/
-│── public/
-│── src/
-│   ├── App.jsx
-│   ├── Browse.jsx
-│   ├── RestaurantDetail.jsx
-│   ├── RestaurantReviews.jsx
-│   ├── Settings.jsx
-│   ├── NotificationsSettings.jsx
-│   ├── assets/
-│── index.css
-│── vite.config.js
-│── package.json
-└── README.md
-
 🚀 Running the Project Locally
 1️⃣ Install dependencies
 npm install
